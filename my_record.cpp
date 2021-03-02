@@ -55,6 +55,7 @@ ListElement* insere_final_lista (ListElement* head, MyRecord thisRecord) {
     return head;
 }
 
+//retorna o tamanho de uma lista de registros.
 int tam_lista (ListElement* head){
     ListElement* current = head;
     int tam = 0;
@@ -65,6 +66,7 @@ int tam_lista (ListElement* head){
     return tam;
 }
 
+//insere um novo elemento na tabela hash
 HashTable* insere_tabela_hash(HashTable* hashHead, MyRecord record){
     HashTable* current = hashHead;
     int table_size = 0;
