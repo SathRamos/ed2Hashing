@@ -18,14 +18,14 @@ class Dictionary{
 Dictionary dict;
 
 bool isNumeric(string str) {
-   for (int i = 0; i < str.length(); i++)
+   for (int i = 0; str[i] != '\0'; i++)
       if (isdigit(str[i]) == false)
          return false; //retorna falso quando um valor não numérico é encontrado
       return true;
 }
 
 string shift_folding(string key){
-    int size = key.size();
+    int size =  key.size();
     string subB = "0";
 
     if(size>FOLD_SIZE){
@@ -52,15 +52,15 @@ int hash (string key){
     return hashed_key%11;
 }
 
-int main(){
-    string k = "a";
-    while(!isNumeric(k)){
-        cout<<"\nInsira uma chave numérica\n";
-        cin>>k;
-    }
-    int foldedKey = stoi(shift_folding(k));
-    cout<<"\nShift Folding (fold = 3) da chave: "<<shift_folding(k);
-
-    cout<<"\nHashing (mod 11): "<< foldedKey%11;
-    return 0;
-}
+//int main(){
+//    char k[20] = "a";
+//    while(!isNumeric(k)){
+//        cout<<"\nInsira uma chave numérica\n";
+//        cin>>k;
+//    }
+//    int foldedKey = stoi(shift_folding(k));
+//    cout<<"\nShift Folding (fold = 3) da chave: "<<shift_folding(k);
+//
+//    cout<<"\nHashing (mod 11): "<< foldedKey%11;
+//    return 0;
+//}
